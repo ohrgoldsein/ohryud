@@ -9,10 +9,15 @@ function BookCard({ image, title, description, buttonText, buttonDisabled, link 
   };
 
   return (
-    <div
-      className={`relative group cursor-pointer w-[240px] h-[360px] rounded-2xl overflow-hidden shadow-lg border border-gray-700`}
-      onClick={handleClick}
-    >
+<div
+  className={`
+    relative group cursor-pointer
+    w-[160px] h-[240px] sm:w-[200px] sm:h-[300px] md:w-[240px] md:h-[360px]
+    rounded-2xl overflow-hidden shadow-lg border border-gray-700
+  `}
+  onClick={handleClick}
+>
+
       {/* Book cover */}
       <img
         src={image}

@@ -46,7 +46,7 @@ const Videos = () => {
     <div className="w-full flex flex-col items-center justify-center px-6 py-4 text-right overflow-hidden relative">
       <div className="flex items-center space-x-2 text-gray-100 space-y-0">
         <Youtube size={38} className="relative top-0 -right-2"/>
-        <span className="text-4xl font-bold mb-4 text-white">ספריית הווידאו</span>
+        <span className="text-2xl sm:text-4xl font-bold mb-4 text-white">ספריית הווידאו</span>
       </div>
 
       <div className="relative w-full flex items-center justify-center">
