@@ -42,8 +42,8 @@ function Books() {
           <div className="flex space-x-4">
             <BookCard
               image="/covers/book1.png"
-              title="מסע בחסידות"
-              description="ספר החוקר את זרמי העומק של החסידות מזווית חדשה ופיוטית."
+              title="נקודת האמת"
+              description="הרבי מקוצק, 'הילד הרע' של החסידות, מוצג לראשונה באור בין-תחומי. הספר עוקב אחרי שמונה פרסונות שונות של הקוצקאי נוכח האגדות עליו, ומראה כי דמותו המיתולוגית מכילה צדיק למדן, אירוניקן משתובב, פילוסוף ספקן וגורו שתקן."
               buttonText="לרכישה"
               buttonDisabled={false}
               link="https://www.magnespress.co.il/"
@@ -51,24 +51,24 @@ function Books() {
             <div></div>
             <BookCard
               image="/covers/book2.png"
-              title="החכם והמרד"
-              description="מסע פילוסופי בעקבות דמויות מהותיות בתולדות הרוח."
+              title="אוהב חוכמה"
+              description="דרוש באורך מלא על מגילת קהלת על דרך הפילוסופיה והסוד הקבלי. ניתוח אנליטי-תורני של דבריו האניגמטיים של שלמה המלך, לנוכח עקרונות הפילוסופיה העכשווית."
               buttonText="לרכישה"
               buttonDisabled={false}
               link="https://your-purchase-link.com/book1"
             />
             <BookCard
               image="/covers/book3.JPG"
-              title="ניגון האין"
-              description="שירה ומסתורין נפגשים בספר שטרם ראה אור."
+              title="עופר האילים"
+              description="פרשנות תיאטרלית על מגילת שיר השירים. ביאור תיאולוגי-תורני של משל האהובים בנוסח מדרשי חכמים."
               buttonText="בקרוב מאוד!"
               buttonDisabled={true}
               link="https://your-purchase-link.com/book1"
             />
             <BookCard
               image="/covers/book4.JPG"
-              title="ניגון האין"
-              description="שירה ומסתורין נפגשים בספר שטרם ראה אור."
+              title="מעשה מעולם עליון"
+              description="רומן בלשי העוסק בשאלות הגדולות ביותר. מי שולט בכול? האם יש לי בחירה? מהי אמונה? מה חשוב בחיים? טרם פורסם."
               buttonText="בקרוב מאוד!"
               buttonDisabled={true}
               link="https://your-purchase-link.com/book1"

@@ -15,7 +15,7 @@ function App() {
   return (
     <div dir="rtl" className="scroll-smooth flex min-h-screen bg-[#0f0f0f] text-gray-200 tinos-regular">
       <Topbar />
-      <main className="flex-1 pl-0 pr-14 space-y-0 h-screen overflow-y-scroll snap-y snap-mandatory sm:snap-none md:snap-y">
+      <main className="flex-1 px-2 sm:px-6 md:px-10 space-y-0 h-screen overflow-y-scroll snap-y snap-mandatory sm:snap-none md:snap-y">
         <div className="h-full">
           {/* Title Section: already full screen */}
           <section id="title_section" className="snap-start h-screen">
@@ -54,7 +54,7 @@ function App() {
           </section>
           <section
           id="lectures"
-          className="relative scroll-mt-20 snap-start h-screen bg-[#121212] p-6 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out"
+          className="relative scroll-mt-20 snap-start h-screen overflow-hidden bg-[#121212] p-6 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out"
         >
           <Lectures />
           <DownArrow nextSectionId="contact" />
