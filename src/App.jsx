@@ -47,14 +47,14 @@ function App() {
           </section>
           <section
             id="publications"
-            className="relative scroll-mt-20 snap-start h-screen bg-[#1a1a1a] p-6 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out"
+            className="relative scroll-mt-20 snap-start h-screen bg-[#121212] p-6 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out"
           >
             <Publications />
             <DownArrow nextSectionId="lectures" />
           </section>
           <section
           id="lectures"
-          className="relative scroll-mt-20 snap-start h-screen overflow-hidden bg-[#121212] p-6 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out"
+                      className="relative scroll-mt-20 snap-start h-screen bg-[#1a1a1a] p-6 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out"
         >
           <Lectures />
           <DownArrow nextSectionId="contact" />

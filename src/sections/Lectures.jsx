@@ -39,9 +39,9 @@ function Lectures() {
   };
 
   return (
-    <div className="h-full flex flex-col items-center justify-center space-y-8">
+    <div className="w-full flex flex-col items-center justify-center px-6 py-4 text-right overflow-hidden relative">
       {/* Title with Icon */}
-      <div className="flex items-center space-x-2 mb-4 text-gray-100">
+      <div className="flex items-center space-x-2  text-gray-100">
         <Mic size={28} className="relative -top-2 -right-2 " />
         <span className="text-4xl font-bold mb-4 text-white">הרצאות</span>
       </div>

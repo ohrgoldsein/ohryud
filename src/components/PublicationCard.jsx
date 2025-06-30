@@ -12,7 +12,7 @@ function PublicationCard({ image, title, articles = [], blogUrl }) {
   <img
     src={image}
     alt={title}
-    className="w-48 h-48 rounded-full object-cover border-4 border-[#333] shadow-md hover:brightness-110 transition duration-300"
+    className="w-40 h-40 rounded-full object-cover border-4 border-[#333] shadow-md hover:brightness-110 transition duration-300"
   />
 </div>
 

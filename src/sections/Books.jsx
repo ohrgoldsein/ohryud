@@ -17,9 +17,9 @@ function Books() {
   };
 
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center px-6 py-4 text-right overflow-hidden relative">
+    <div className="w-full flex flex-col items-center justify-center px-6 py-4 text-right overflow-hidden relative">
       {/* Header */}
-      <div className="flex items-center space-x-2 mb-4 text-gray-100">
+      <div className="flex items-center space-x-2 text-gray-100">
         <Book size={32} className="relative -top-2 -right-2"/>
         <span className="text-4xl font-bold mb-4 text-white">הספרים שלי</span>
       </div>

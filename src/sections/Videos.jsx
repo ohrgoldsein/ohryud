@@ -43,8 +43,8 @@ const Videos = () => {
   };
 
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center px-6 py-4 text-right overflow-hidden relative">
-      <div className="flex items-center space-x-2 mb-4 text-gray-100 space-y-0">
+    <div className="w-full flex flex-col items-center justify-center px-6 py-4 text-right overflow-hidden relative">
+      <div className="flex items-center space-x-2 text-gray-100 space-y-0">
         <Youtube size={38} className="relative top-0 -right-2"/>
         <span className="text-4xl font-bold mb-4 text-white">ספריית הווידאו</span>
       </div>
@@ -67,13 +67,13 @@ const Videos = () => {
         {/* Video list */}
         <div
           ref={scrollRef}
-          className="flex space-x-6 overflow-x-auto snap-x snap-mandatory px-10 -py-2 hide-scrollbar"
+          className="flex gap-[0px] overflow-x-auto snap-x snap-mandatory px-1 -py-2 hide-scrollbar"
           dir="rtl"
         >
           {videos.map((video) => (
             <div
               key={video.id}
-              className="transform scale-[0.75] min-w-[250px] flex-shrink-0 snap-center bg-[#1f1f1f] rounded-2xl overflow-hidden shadow-md shadow-black/40 transition-transform duration-300"
+              className="transform scale-[0.7] min-w-[250px] flex-shrink-0 snap-center bg-[#1f1f1f] rounded-2xl overflow-hidden shadow-md shadow-black/40 transition-transform duration-300"
             >
               <div className="w-full aspect-[9/16]">
                 <iframe
@@ -83,9 +83,6 @@ const Videos = () => {
                   allowFullScreen
                   className="w-full h-full"
                 ></iframe>
-              </div>
-              <div className="p-3 text-sm text-gray-300 text-center">
-                {video.description}
               </div>
             </div>
           ))}

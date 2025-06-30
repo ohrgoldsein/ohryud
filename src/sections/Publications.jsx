@@ -15,7 +15,7 @@ const publications = [
       { title: 'ניתוח תיאולוגי פשוט של הסוגיא ההומוסקסואלית', url: 'https://ohris.wordpress.com/2021/04/18/lgbt/' },
       { title: 'יוצרות ליום פאי', url: 'https://ohris.wordpress.com/2016/03/14/%d7%99%d7%95%d7%a6%d7%a8%d7%95%d7%aa-%d7%9c%d7%99%d7%95%d7%9d-%d7%a4%d7%90%d7%99/' },
       { title: 'איך היהודים רצחו את השטן', url: 'https://ohris.wordpress.com/2015/06/03/kill-the-devil/' },
-      { title: 'עמודים מעורערים – מחלוקות שלא לשם שמיים בהלכה', url: 'https://ohris.wordpress.com/2014/04/23/%d7%a2%d7%9e%d7%95%d7%93%d7%99%d7%9d-%d7%9e%d7%a2%d7%95%d7%a8%d7%a2%d7%a8%d7%99%d7%9d-%d7%9e%d7%97%d7%9c%d7%95%d7%a7%d7%95%d7%aa-%d7%a9%d7%9c%d7%90-%d7%9c%d7%a9%d7%9d-%d7%a9%d7%9e%d7%99/' },
+      { title: 'עמודים מעורערים – מחלוקות שלא לשם שמיים ', url: 'https://ohris.wordpress.com/2014/04/23/%d7%a2%d7%9e%d7%95%d7%93%d7%99%d7%9d-%d7%9e%d7%a2%d7%95%d7%a8%d7%a2%d7%a8%d7%99%d7%9d-%d7%9e%d7%97%d7%9c%d7%95%d7%a7%d7%95%d7%aa-%d7%a9%d7%9c%d7%90-%d7%9c%d7%a9%d7%9d-%d7%a9%d7%9e%d7%99/' },
       { title: 'איך הגיעה אייץ\' לשם שלי?', url: 'https://ohris.wordpress.com/2013/05/06/h-in-ohr/' },
       { title: 'מדריך הנבוכים לגלקסיה', url: 'https://ohris.wordpress.com/2013/04/09/hg2/' },
       { title: 'תולדות ה"אוי" היהודי', url: 'https://ohris.wordpress.com/2013/12/02/%d7%aa%d7%95%d7%9c%d7%93%d7%95%d7%aa-%d7%94%d7%90%d7%95%d7%99-%d7%94%d7%99%d7%94%d7%95%d7%93%d7%99/' },
@@ -52,10 +52,9 @@ function Publications() {
   };
 
   return (
-    <div className="h-full flex flex-col items-center justify-center space-y-8">
-      {/* Title with Icon */}
+    <div className="w-full flex flex-col items-center justify-center px-6  text-right overflow-hidden relative">
       <div className="flex items-center space-x-2 mb-4 text-gray-100">
-        <BookOpen size={28} className="relative -top-2 -right-2" />
+        <BookOpen size={28} className="relative -top-2 -right-2 " />
         <span className="text-4xl font-bold mb-4 text-white">פרסומים</span>
       </div>
 

@@ -2,6 +2,7 @@
 import React from 'react';
 import { FaEnvelope, FaPhone, FaTelegramPlane } from 'react-icons/fa';
 import { Mail, Phone, Instagram, MessageCircleMore } from 'lucide-react';
+import TopArrow from '../components/TopArrow';
 
 const Contact = () => (
   <div className="flex flex-col h-full justify-center items-center text-center relative">
@@ -48,6 +49,7 @@ const Contact = () => (
             className="w-full h-auto object-contain opacity-70 -rotate-45"
           />
         </div>
+        <TopArrow targetSectionId="title_section" />
   </div>
 );
 
