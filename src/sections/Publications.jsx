@@ -42,7 +42,7 @@ const publications = [
 function Publications() {
 
   return (
-    <div className="w-full flex flex-col items-center justify-center px-6 text-right overflow-hidden relative">
+    <div className="w-full flex flex-col items-center justify-center text-right overflow-hidden relative">
       <div className="flex items-center space-x-2 mb-4 text-gray-100">
         <BookOpen size={28} className="relative -top-2 -right-2 " />
         <span className="text-2xl sm:text-4xl font-bold mb-4 text-white">פרסומים</span>

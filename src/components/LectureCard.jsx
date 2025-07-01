@@ -7,7 +7,7 @@ function LectureCard({ image, title, description }) {
   className="w-full max-w-[320px] sm:max-w-[280px] md:max-w-[320px] bg-[#1e1e1e] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl cursor-pointer transition-transform mx-auto"
   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
 >
-  <div className="h-10 sm:h-36 md:h-48 overflow-hidden">
+  <div className="h-16 sm:h-36 md:h-48 overflow-hidden">
     <img
       src={image}
       alt={title}

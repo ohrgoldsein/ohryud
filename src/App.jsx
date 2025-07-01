@@ -26,7 +26,7 @@ function App() {
           {/* Dark-themed sections */}
           <section
             id="biography"
-            className="relative scroll-mt-20 snap-start min-h-screen md:h-screen bg-[#1a1a1a] p-12 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out overflow-y-auto"
+            className="relative scroll-mt-20 snap-start min-h-screen md:h-screen bg-[#1a1a1a] p-16 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out overflow-y-auto"
           >
             <Biography />
             <DownArrow nextSectionId="books" />
@@ -34,7 +34,7 @@ function App() {
           </section>
           <section
             id="books"
-            className="relative scroll-mt-20 snap-start min-h-screen md:h-screen bg-[#121212] p-12 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out overflow-y-auto"
+            className="relative scroll-mt-20 snap-start min-h-screen md:h-screen bg-[#121212] p-20 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out overflow-y-auto"
           >
             <Books />
             <DownArrow nextSectionId="videos" />
@@ -48,21 +48,21 @@ function App() {
           </section>
           <section
             id="short_stories"
-            className="relative scroll-mt-20 snap-start min-h-screen md:h-screen bg-[#121212] p-12 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out overflow-y-auto"
+            className="relative scroll-mt-20 snap-start min-h-screen md:h-screen bg-[#121212] p-20 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out overflow-y-auto"
           >
             <ShortStories />
             <DownArrow nextSectionId="publications" />
           </section>
           <section
             id="publications"
-            className="relative scroll-mt-20 snap-start min-h-screen md:h-screen bg-[#1a1a1a] p-16 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out overflow-y-auto"
+            className="relative scroll-mt-20 snap-start min-h-screen md:h-screen bg-[#1a1a1a] p-20 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out overflow-y-auto"
           >
             <Publications />
             <DownArrow nextSectionId="lectures" />
           </section>
           <section
           id="lectures"
-            className="relative scroll-mt-20 snap-start min-h-screen md:h-screen bg-[#121212] p-12 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out overflow-y-auto"
+            className="relative scroll-mt-20 snap-start min-h-screen md:h-screen bg-[#121212] p-20 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out overflow-y-auto"
         >
           <Lectures />
           <DownArrow nextSectionId="contact" />
@@ -70,7 +70,7 @@ function App() {
 
           <section
             id="contact"
-            className="relative scroll-mt-20 snap-start min-h-screen md:h-screen bg-[#121212] p-12 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out overflow-y-auto"
+            className="relative scroll-mt-20 snap-start min-h-screen md:h-screen bg-[#121212] p-20 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out overflow-y-auto"
           >
             <Contact />
           </section>

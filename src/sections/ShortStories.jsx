@@ -27,7 +27,7 @@ const stories = [
 
 function ShortStories() {
   return (
-    <div className="w-full flex flex-col items-center justify-center px-6 py-4 text-right overflow-hidden">
+    <div className="w-full flex flex-col items-center justify-center px-6 py-0 text-right overflow-hidden">
       {/* Title with Icon */}
       <div className="flex items-center space-x-2 text-gray-100 mb-6">
         <Feather size={26} className="relative -top-1 -right-2" />
