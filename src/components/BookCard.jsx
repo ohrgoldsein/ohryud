@@ -12,7 +12,7 @@ function BookCard({ image, title, description, buttonText, buttonDisabled, link 
 <div
   className={`
     relative group cursor-pointer
-    w-[160px] h-[240px] sm:w-[200px] sm:h-[300px] md:w-[240px] md:h-[360px]
+    w-[120px] h-[180px] sm:w-[160px] sm:h-[240px] md:w-[240px] md:h-[360px]
     rounded-2xl overflow-hidden shadow-lg border border-gray-700
   `}
   onClick={handleClick}

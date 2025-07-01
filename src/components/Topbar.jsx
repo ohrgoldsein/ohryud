@@ -10,6 +10,7 @@ const Topbar = () => {
     { id: 'biography', label: 'ביוגרפיה' },
     { id: 'books', label: 'הספרים שלי' },
     { id: 'videos', label: 'וידאו' },
+    { id: 'short_stories', label: 'סיפורים קצרים' },
     { id: 'publications', label: 'פרסומים' },
     { id: 'lectures', label: 'הרצאות' },
     { id: 'contact', label: 'צור קשר' },

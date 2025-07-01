@@ -11,7 +11,6 @@ const publications = [
     blogUrl: 'https://ohris.wordpress.com/',
     articles: [
       { title: 'חגיגת חג המולד של היהודים ', url: 'https://ohris.wordpress.com/2024/12/15/nitel_nacht/' },
-      { title: 'וידויו של מכור לעבודה זרה (מעשה בדיוני)', url: 'https://ohris.wordpress.com/2024/09/04/idols/' },
       { title: 'ניתוח תיאולוגי פשוט של  הומוסקסואליות', url: 'https://ohris.wordpress.com/2021/04/18/lgbt/' },
       { title: 'יוצרות ליום פאי', url: 'https://ohris.wordpress.com/2016/03/14/%d7%99%d7%95%d7%a6%d7%a8%d7%95%d7%aa-%d7%9c%d7%99%d7%95%d7%9d-%d7%a4%d7%90%d7%99/' },
       { title: 'איך היהודים רצחו את השטן', url: 'https://ohris.wordpress.com/2015/06/03/kill-the-devil/' },
