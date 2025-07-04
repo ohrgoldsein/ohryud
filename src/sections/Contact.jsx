@@ -50,6 +50,10 @@ const Contact = () => (
           />
         </div>
         <TopArrow targetSectionId="title_section" />
+            {/* Copyright Footer */}
+    <footer className="absolute bottom-4 text-sm text-gray-500">
+      &copy; {new Date().getFullYear()} כל הזכויות שמורות לאור י. גולדשטיין
+    </footer>
   </div>
 );
 
