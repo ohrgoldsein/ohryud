@@ -1,31 +1,59 @@
-import React from 'react';
-import { Feather } from 'lucide-react';
+// src/sections/ShortStories.jsx
+
+import React, { useState } from 'react';
+import { Feather, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const stories = [
   {
     title: 'הלמה החלומית',
     image: '/stories/story1.jpg',
-    link: '/stories/bird-in-coop',
+    file: '/stories/lema.txt',
   },
   {
     title: 'וידויו של מכור לעבודה זרה ',
     image: '/stories/story2.jpg',
-    link: 'https://ohris.wordpress.com/2024/09/04/idols/',
+    file: '/stories/idol.txt',
   },
   {
     title: 'מעשה ממובטל',
     image: '/stories/story3.jpg',
-    link: 'https://ohris.wordpress.com/2024/09/22/unemployed/',
+    file: '/stories/movtal.txt',
   },
-    {
+  {
     title: 'ערוץ הפסטיבל',
     image: '/stories/story4.jpg',
-    link: 'https://ohris.wordpress.com/2024/09/16/romania_folk/',
+    file: '/stories/festival.txt',
   },
 ];
 
 function ShortStories() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [storyText, setStoryText] = useState('');
+  const [storyTitle, setStoryTitle] = useState('');
+
+  const openStory = async (story) => {
+    if (story.file) {
+      try {
+        const response = await fetch(story.file);
+        const text = await response.text();
+        setStoryText(text);
+        setStoryTitle(story.title);
+        setModalOpen(true);
+      } catch (error) {
+        console.error('Error loading story:', error);
+      }
+    } else if (story.link) {
+      window.open(story.link, '_blank');
+    }
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setStoryText('');
+    setStoryTitle('');
+  };
+
   return (
     <div className="w-full flex flex-col items-center justify-center px-6 py-0 text-right overflow-hidden">
       {/* Title with Icon */}
@@ -46,7 +74,7 @@ function ShortStories() {
           <motion.div
             key={index}
             whileHover={{ scale: 1.05 }}
-            onClick={() => window.open(story.link, '_blank')}
+            onClick={() => openStory(story)}
             className="relative cursor-pointer rounded-xl overflow-hidden h-40 sm:h-48 md:h-56 group"
           >
             <img
@@ -62,6 +90,36 @@ function ShortStories() {
           </motion.div>
         ))}
       </motion.div>
+
+      {/* Modal Popup */}
+{modalOpen && (
+  <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex flex-col items-center justify-start p-4 sm:p-8 overflow-y-auto text-white">
+    {/* Header */}
+    <div className="w-full flex justify-between items-center mb-4">
+      <h2 className="text-2xl font-bold">{storyTitle}</h2>
+      <button onClick={closeModal} className="text-white hover:text-red-500 transition">
+        <X size={32} />
+      </button>
+    </div>
+
+    {/* Story Content */}
+    <div className="whitespace-pre-wrap text-base leading-loose max-w-4xl w-full">
+      {storyText}
+    </div>
+
+    {/* Footer Close Button */}
+    <div className="w-full flex justify-center mt-8">
+      <button
+        onClick={closeModal}
+        className="flex items-center space-x-2 border border-gray-500 rounded-full px-4 py-2 hover:bg-red-600 hover:border-red-600 transition"
+      >
+        <X size={20} />
+        <span>סגור</span>
+      </button>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }
