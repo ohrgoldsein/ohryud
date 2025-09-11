@@ -1,6 +1,6 @@
 // src/sections/Biography.jsx
 import React from 'react';
-import myPhoto from '../assets/me.jpeg'; // Place your image in src/assets/me.jpg
+import myPhoto from '../assets/me.png'; // Place your image in src/assets/me.jpg
 import DownArrow from '../components/DownArrow';
 import { Quote } from 'lucide-react';
 

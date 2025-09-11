@@ -18,15 +18,7 @@ function Books() {
 
   const books = [
     {
-      image: "/covers/book1.png",
-      title: "נקודת האמת",
-              description:"הרבי מקוצק, 'הילד הרע' של החסידות, מוצג לראשונה באור בין-תחומי. הספר עוקב אחרי שמונה פרסונות שונות של הקוצקאי נוכח האגדות עליו, ומראה כי דמותו המיתולוגית מכילה צדיק למדן, אירוניקן משתובב, פילוסוף ספקן וגורו שתקן.",
-      buttonText: "לרכישה",
-      buttonDisabled: false,
-      link: "https://www.magnespress.co.il/",
-    },
-    {
-      image: "/covers/book2.png",
+      image: "/covers/book2.jpg",
       title: "אוהב חוכמה",
               description:"דרוש באורך מלא על מגילת קהלת על דרך הפילוסופיה והסוד הקבלי. ניתוח אנליטי-תורני של דבריו האניגמטיים של שלמה המלך, לנוכח עקרונות הפילוסופיה העכשווית.",
       buttonText: "לרכישה",
@@ -34,12 +26,20 @@ function Books() {
       link: "https://your-purchase-link.com/book1",
     },
     {
+      image: "/covers/book1.png",
+      title: "זעקת אמת",
+              description:"הרבי מקוצק, 'הילד הרע' של החסידות, מוצג לראשונה באור בין-תחומי. הספר עוקב אחרי שמונה פרסונות שונות של הקוצקאי נוכח האגדות עליו, ומראה כי דמותו המיתולוגית מכילה צדיק למדן, אירוניקן משתובב, פילוסוף ספקן וגורו שתקן.",
+      buttonText: "לרכישה",
+      buttonDisabled: false,
+      link: "https://www.magnespress.co.il/",
+    },
+    {
       image: "/covers/book3.JPG",
       title: "עופר האילים",
               description:"פרשנות תיאטרלית על מגילת שיר השירים. ביאור תיאולוגי-תורני של משל האהובים בנוסח מדרשי חכמים.",
-      buttonText: "בקרוב מאוד!",
-      buttonDisabled: true,
-      link: "https://your-purchase-link.com/book1",
+      buttonText: "להזמנה צור קשר",
+      buttonDisabled: false,
+      scrollTo: "contact"
     },
     {
       image: "/covers/book4.JPG",

@@ -1,23 +1,24 @@
 // src/components/BookCard.jsx
 import React from 'react';
 
-function BookCard({ image, title, description, buttonText, buttonDisabled, link }) {
+function BookCard({ image, title, description, buttonText, buttonDisabled, link, scrollTo }) {
   const handleClick = () => {
-    if (!buttonDisabled && link) {
+    if (scrollTo) {
+      document.getElementById(scrollTo)?.scrollIntoView({ behavior: 'smooth' });
+    } else if (!buttonDisabled && link) {
       window.open(link, '_blank');
     }
   };
 
   return (
-<div
-  className={`
-    relative group cursor-pointer
-    w-[160px] h-[240px] sm:w-[160px] sm:h-[240px] md:w-[240px] md:h-[360px]
-    rounded-2xl overflow-hidden shadow-lg border border-gray-700
-  `}
-  onClick={handleClick}
->
-
+    <div
+      className={`
+        relative group cursor-pointer
+        w-[160px] h-[240px] sm:w-[160px] sm:h-[240px] md:w-[240px] md:h-[360px]
+        rounded-2xl overflow-hidden shadow-lg border border-gray-700
+      `}
+      onClick={handleClick}
+    >
       {/* Book cover */}
       <img
         src={image}
@@ -36,7 +37,7 @@ function BookCard({ image, title, description, buttonText, buttonDisabled, link 
           rel="noopener noreferrer"
           onClick={(e) => {
             e.stopPropagation();
-            if (buttonDisabled) e.preventDefault();
+            if (buttonDisabled || scrollTo) e.preventDefault();
           }}
         >
           <button
@@ -54,6 +55,5 @@ function BookCard({ image, title, description, buttonText, buttonDisabled, link 
     </div>
   );
 }
-
 
 export default BookCard;
