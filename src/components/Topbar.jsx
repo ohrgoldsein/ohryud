@@ -8,7 +8,7 @@ const Topbar = () => {
 
   const sections = [
     { id: 'biography', label: 'ביוגרפיה' },
-    { id: 'books', label: 'הספרים שלי' },
+    { id: 'kohelet_book', label: 'הספרים שלי' },
     { id: 'videos', label: 'וידאו' },
     { id: 'short_stories', label: 'סיפורים קצרים' },
     { id: 'publications', label: 'פרסומים' },

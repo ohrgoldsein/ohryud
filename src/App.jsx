@@ -11,6 +11,7 @@ import DownArrow from './components/DownArrow';
 import Lectures from './sections/Lectures';
 import Publications from './sections/Publications';
 import ShortStories from './sections/ShortStories';
+import KoheletBook from './sections/KoheletBook';
 
 function App() {
   return (
@@ -29,9 +30,17 @@ function App() {
             className="relative scroll-mt-20 snap-start min-h-screen md:h-screen bg-[#1a1a1a] p-16 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out overflow-y-auto"
           >
             <Biography />
-            <DownArrow nextSectionId="books" />
+            <DownArrow nextSectionId="kohelet_book" />
 
           </section>
+            <section
+                id="kohelet_book"
+                className="relative scroll-mt-20 snap-start min-h-screen md:h-screen bg-[#121212] p-20 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out overflow-y-auto"
+            >
+                <KoheletBook />
+                <DownArrow nextSectionId="books" />
+
+            </section>
           <section
             id="books"
             className="relative scroll-mt-20 snap-start min-h-screen md:h-screen bg-[#121212] p-20 text-gray-300 border-t border-gray-800 transition-colors duration-500 ease-in-out overflow-y-auto"
