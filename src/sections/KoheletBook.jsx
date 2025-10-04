@@ -22,9 +22,9 @@ function KoheletBook() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const serviceId = process.env.EMAIL_JS_SERVICE_ID;
-    const templateId = process.env.EMAIL_JS_KOHELET_TEMPLATE_ID;
-    const publicKey = process.env.EMAIL_JS_KOHELET_PUBLIC_KEY;
+    const serviceId = process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAIL_JS_KOHELET_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAIL_JS_KOHELET_PUBLIC_KEY;
     console.log("Data...");
     console.log(serviceId);
     console.log(templateId);
