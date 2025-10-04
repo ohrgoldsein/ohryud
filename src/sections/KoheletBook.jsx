@@ -22,6 +22,14 @@ function KoheletBook() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const serviceId = process.env.EMAIL_JS_SERVICE_ID;
+    const templateId = process.env.EMAIL_JS_KOHELET_TEMPLATE_ID;
+    const publicKey = process.env.EMAIL_JS_KOHELET_PUBLIC_KEY;
+    console.log("Data...");
+    console.log(serviceId);
+    console.log(templateId);
+    console.log(publicKey);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setStatus(null);
@@ -29,8 +37,8 @@ function KoheletBook() {
         // 1. Send email
         emailjs
             .send(
-                "service_xvwqi3b",// process.env.EMAIL_JS_SERVICE_ID,
-                "template_tf09jja",// process.env.EMAIL_JS_KOHELET_TEMPLATE_ID,
+                serviceId,
+                templateId,
                 {
                     fullName: formData.fullName,
                     email: formData.email,
@@ -41,7 +49,7 @@ function KoheletBook() {
                     price: 60*formData.amount,
                     bookName,
                 },
-                "hbOXO_SKTZRF85644",// process.env.EMAIL_JS_KOHELET_PUBLIC_KEY
+                publicKey
             )
             .then(
                 (result) => {
