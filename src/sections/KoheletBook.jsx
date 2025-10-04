@@ -29,8 +29,8 @@ function KoheletBook() {
         // 1. Send email
         emailjs
             .send(
-                process.env.EMAIL_JS_SERVICE_ID,
-                process.env.EMAIL_JS_KOHELET_TEMPLATE_ID,
+                "service_xvwqi3b",// process.env.EMAIL_JS_SERVICE_ID,
+                "template_tf09jja",// process.env.EMAIL_JS_KOHELET_TEMPLATE_ID,
                 {
                     fullName: formData.fullName,
                     email: formData.email,
@@ -41,7 +41,7 @@ function KoheletBook() {
                     price: 60*formData.amount,
                     bookName,
                 },
-                process.env.EMAIL_JS_KOHELET_PUBLIC_KEY
+                "hbOXO_SKTZRF85644",// process.env.EMAIL_JS_KOHELET_PUBLIC_KEY
             )
             .then(
                 (result) => {
@@ -54,7 +54,7 @@ function KoheletBook() {
                     window.open(paypalUrl, "_blank");
                 },
                 (error) => {
-                    console.error("Email sending failed:", error.text);
+                    console.error("Email sending failed:", error);
                     setStatus("error");
                 }
             );
