@@ -2,6 +2,18 @@ import React, {useState} from "react";
 import {motion} from "framer-motion";
 import emailjs from "@emailjs/browser";
 
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    reactStrictMode: true,
+    env: {
+        NEXT_PUBLIC_EMAIL_JS_SERVICE_ID: process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID,
+        NEXT_PUBLIC_EMAIL_JS_KOHELET_TEMPLATE_ID: process.env.NEXT_PUBLIC_EMAIL_JS_KOHELET_TEMPLATE_ID,
+        NEXT_PUBLIC_EMAIL_JS_KOHELET_PUBLIC_KEY: process.env.NEXT_PUBLIC_EMAIL_JS_KOHELET_PUBLIC_KEY,
+    },
+};
+
+module.exports = nextConfig;
+
 function KoheletBook() {
     const [showForm, setShowForm] = useState(false);
     const [status, setStatus] = useState(null); // null | "success" | "error"
