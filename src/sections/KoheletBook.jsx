@@ -9,6 +9,7 @@ const publicKey = import.meta.env.VITE_EMAIL_JS_KOHELET_PUBLIC_KEY;
 function KoheletBook() {
     const [showForm, setShowForm] = useState(false);
     const [status, setStatus] = useState(null); // null | "success" | "error"
+    const [error, setError] = useState(""); // error message
     const [formData, setFormData] = useState({
         fullName: "",
         email: "",
@@ -26,9 +27,22 @@ function KoheletBook() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    // Email validation function
+    const isValidEmail = (email) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setStatus(null);
+        setError("");
+
+        // Validate email
+        if (!isValidEmail(formData.email)) {
+            setError("❌ כתובת אימייל לא תקינה");
+            return;
+        }
 
         // 1. Send email
         emailjs
@@ -42,7 +56,7 @@ function KoheletBook() {
                     address: formData.address,
                     city: formData.city,
                     amount: formData.amount,
-                    price: 60*formData.amount,
+                    price: 60 * formData.amount,
                     bookName,
                 },
                 publicKey
@@ -163,19 +177,22 @@ function KoheletBook() {
                         {status === null ? (
                             <form onSubmit={handleSubmit} className="space-y-4">
                                 <input
-                                    type="text"
-                                    name="fullName"
-                                    placeholder="שם מלא"
-                                    value={formData.fullName}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white"
-                                />
-                                <input
                                     type="email"
                                     name="email"
                                     placeholder="כתובת אימייל"
                                     value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white"
+                                />
+                                {error && (
+                                    <p className="text-red-400 text-sm">{error}</p>
+                                )}
+                                <input
+                                    type="text"
+                                    name="fullName"
+                                    placeholder="שם מלא"
+                                    value={formData.fullName}
                                     onChange={handleChange}
                                     required
                                     className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white"
