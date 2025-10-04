@@ -5,10 +5,6 @@ import emailjs from "@emailjs/browser";
 const serviceId = import.meta.env.VITE_EMAIL_JS_SERVICE_ID;
 const templateId = import.meta.env.VITE_EMAIL_JS_KOHELET_TEMPLATE_ID;
 const publicKey = import.meta.env.VITE_EMAIL_JS_KOHELET_PUBLIC_KEY;
-console.log("Data...");
-console.log(serviceId);
-console.log(templateId);
-console.log(publicKey);
 
 function KoheletBook() {
     const [showForm, setShowForm] = useState(false);
