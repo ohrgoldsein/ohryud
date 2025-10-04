@@ -2,17 +2,13 @@ import React, {useState} from "react";
 import {motion} from "framer-motion";
 import emailjs from "@emailjs/browser";
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    reactStrictMode: true,
-    env: {
-        NEXT_PUBLIC_EMAIL_JS_SERVICE_ID: process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID,
-        NEXT_PUBLIC_EMAIL_JS_KOHELET_TEMPLATE_ID: process.env.NEXT_PUBLIC_EMAIL_JS_KOHELET_TEMPLATE_ID,
-        NEXT_PUBLIC_EMAIL_JS_KOHELET_PUBLIC_KEY: process.env.NEXT_PUBLIC_EMAIL_JS_KOHELET_PUBLIC_KEY,
-    },
-};
-
-module.exports = nextConfig;
+const serviceId = process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID;
+const templateId = process.env.NEXT_PUBLIC_EMAIL_JS_KOHELET_TEMPLATE_ID;
+const publicKey = process.env.NEXT_PUBLIC_EMAIL_JS_KOHELET_PUBLIC_KEY;
+console.log("Data...");
+console.log(serviceId);
+console.log(templateId);
+console.log(publicKey);
 
 function KoheletBook() {
     const [showForm, setShowForm] = useState(false);
@@ -33,14 +29,6 @@ function KoheletBook() {
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-
-    const serviceId = process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID;
-    const templateId = process.env.NEXT_PUBLIC_EMAIL_JS_KOHELET_TEMPLATE_ID;
-    const publicKey = process.env.NEXT_PUBLIC_EMAIL_JS_KOHELET_PUBLIC_KEY;
-    console.log("Data...");
-    console.log(serviceId);
-    console.log(templateId);
-    console.log(publicKey);
 
     const handleSubmit = (e) => {
         e.preventDefault();
