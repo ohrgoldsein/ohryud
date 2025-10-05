@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {motion} from "framer-motion";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 const serviceId = import.meta.env.VITE_EMAIL_JS_SERVICE_ID;
@@ -9,7 +9,8 @@ const publicKey = import.meta.env.VITE_EMAIL_JS_KOHELET_PUBLIC_KEY;
 function KoheletBook() {
     const [showForm, setShowForm] = useState(false);
     const [status, setStatus] = useState(null); // null | "success" | "error"
-    const [error, setError] = useState(""); // error message
+    const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false); // NEW: loading spinner
     const [formData, setFormData] = useState({
         fullName: "",
         email: "",
@@ -27,24 +28,20 @@ function KoheletBook() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    // Email validation function
-    const isValidEmail = (email) => {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    };
+    const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setStatus(null);
         setError("");
+        setLoading(true); // show spinner
 
-        // Validate email
         if (!isValidEmail(formData.email)) {
             setError("❌ כתובת אימייל לא תקינה");
+            setLoading(false);
             return;
         }
 
-        // 1. Send email
         emailjs
             .send(
                 serviceId,
@@ -65,8 +62,8 @@ function KoheletBook() {
                 (result) => {
                     console.log("Email sent successfully:", result.text);
                     setStatus("success");
+                    setLoading(false);
 
-                    // Open PayPal
                     const total = formData.amount * bookPrice;
                     const paypalUrl = `https://www.paypal.com/paypalme/ohryud/${total}ISL/`;
                     window.open(paypalUrl, "_blank");
@@ -74,13 +71,14 @@ function KoheletBook() {
                 (error) => {
                     console.error("Email sending failed:", error);
                     setStatus("error");
+                    setLoading(false);
                 }
             );
     };
 
     return (
         <div className="flex flex-col items-center justify-center h-full space-y-10">
-            {/* Section Title */}
+            {/* Title */}
             <motion.h2
                 className="text-3xl md:text-4xl font-bold text-center text-gray-100"
                 initial={{ opacity: 0, y: -40 }}
@@ -90,20 +88,16 @@ function KoheletBook() {
                 חדש! {bookName}
             </motion.h2>
 
-            {/* Tiles Grid */}
+            {/* Tiles */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-6xl">
-                {/* Book Cover */}
+                {/* Cover */}
                 <motion.div
                     className="bg-[#222] rounded-2xl p-6 shadow-lg flex flex-col items-center"
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
                 >
-                    <img
-                        src={coverImage}
-                        alt="Kohelet Book Cover"
-                        className="rounded-lg shadow-md"
-                    />
+                    <img src={coverImage} alt="Kohelet Book Cover" className="rounded-lg shadow-md" />
                 </motion.div>
 
                 {/* Description */}
@@ -119,9 +113,8 @@ function KoheletBook() {
                     </p>
                 </motion.div>
 
-                {/* Split column: Audio + Button */}
+                {/* Audio + Button */}
                 <div className="flex flex-col space-y-6">
-                    {/* Audio Tile */}
                     <motion.div
                         className="bg-[#222] rounded-2xl p-6 shadow-lg flex flex-col items-center justify-center"
                         initial={{ opacity: 0, x: 50 }}
@@ -135,7 +128,6 @@ function KoheletBook() {
                         </audio>
                     </motion.div>
 
-                    {/* Button Tile */}
                     <motion.div
                         className="bg-[#222] rounded-2xl p-6 shadow-lg flex items-center justify-center"
                         initial={{ opacity: 0, x: 50 }}
@@ -149,13 +141,13 @@ function KoheletBook() {
                             }}
                             className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-lg font-semibold shadow-md transition-transform transform hover:scale-105"
                         >
-                            לרכישה
+                            לרכישה (PayPal בלבד)
                         </button>
                     </motion.div>
                 </div>
             </div>
 
-            {/* Purchase Form Modal */}
+            {/* Modal */}
             {showForm && (
                 <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
                     <div className="bg-[#222] rounded-2xl p-8 w-full max-w-md shadow-xl relative">
@@ -167,14 +159,14 @@ function KoheletBook() {
                         </button>
 
                         <h2 className="text-2xl text-white mb-4">פרטי רכישה</h2>
-                        <img
-                            src={coverImage}
-                            alt="Book cover"
-                            className="w-32 mb-4 mx-auto rounded-lg"
-                        />
+                        <img src={coverImage} alt="Book cover" className="w-32 mb-4 mx-auto rounded-lg" />
                         <p className="text-center text-gray-200 mb-4">{bookName}</p>
 
-                        {status === null ? (
+                        {loading ? (
+                            <div className="flex justify-center items-center py-10">
+                                <div className="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
+                            </div>
+                        ) : status === null ? (
                             <form onSubmit={handleSubmit} className="space-y-4">
                                 <input
                                     type="email"
@@ -185,9 +177,7 @@ function KoheletBook() {
                                     required
                                     className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white"
                                 />
-                                {error && (
-                                    <p className="text-red-400 text-sm">{error}</p>
-                                )}
+                                {error && <p className="text-red-400 text-sm">{error}</p>}
                                 <input
                                     type="text"
                                     name="fullName"
