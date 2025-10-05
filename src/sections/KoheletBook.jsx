@@ -227,6 +227,10 @@ function KoheletBook() {
                                     />
                                 </div>
 
+                                <p className="text-center text-gray-200 mt-2">
+                                    מחיר כולל: <span className="font-bold text-white">{formData.amount * bookPrice} ₪</span>
+                                </p>
+
                                 <button
                                     type="submit"
                                     className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl text-white font-bold"

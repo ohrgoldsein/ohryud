@@ -23,14 +23,14 @@ function Books() {
               description:"דרוש באורך מלא על מגילת קהלת על דרך הפילוסופיה והסוד הקבלי. ניתוח אנליטי-תורני של דבריו האניגמטיים של שלמה המלך, לנוכח עקרונות הפילוסופיה העכשווית.",
       buttonText: "לרכישה",
       buttonDisabled: false,
-      link: "https://your-purchase-link.com/book1",
+      scrollTo: "kohelet_book"
     },
     {
       image: "/covers/book1.png",
       title: "זעקת אמת",
               description:"הרבי מקוצק, 'הילד הרע' של החסידות, מוצג לראשונה באור בין-תחומי. הספר עוקב אחרי שמונה פרסונות שונות של הקוצקאי נוכח האגדות עליו, ומראה כי דמותו המיתולוגית מכילה צדיק למדן, אירוניקן משתובב, פילוסוף ספקן וגורו שתקן.",
-      buttonText: "לרכישה",
-      buttonDisabled: false,
+      buttonText: "בקרוב מאוד!",
+      buttonDisabled: true,
       link: "https://www.magnespress.co.il/",
     },
     {
