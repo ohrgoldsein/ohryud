@@ -1,4 +1,4 @@
-// src/Homepage.jsx
+// src/HomePage.jsx
 
 import React from 'react';
 import Topbar from './components/Topbar';
@@ -13,7 +13,7 @@ import Publications from './sections/Publications';
 import ShortStories from './sections/ShortStories';
 import KoheletBook from './sections/KoheletBook';
 
-function Homepage() {
+function HomePage() {
     return (
         <div dir="rtl" className="scroll-smooth flex min-h-screen bg-[#0f0f0f] text-gray-200 tinos-regular">
             <Topbar />
@@ -89,4 +89,4 @@ function Homepage() {
     );
 }
 
-export default Homepage;
+export default HomePage;

@@ -1,7 +1,7 @@
 // src/App.jsx
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./HomePage";
+import HomePage from "./HomePage.jsx";
 import KoheletPage from "./pages/KoheletPage";
 
 function App() {
