@@ -75,3 +75,10 @@ html {
 .bg-gold {
     background-color: var(--gold);
 }
+
+@font-face {
+    font-family: 'Dana';
+    src: url('src/assets/fonts/DanaYadAlefAlefAlef-Normal.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}

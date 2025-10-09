@@ -7,10 +7,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        tinos:["Tinos", 'serif']
+        tinos:["Tinos", 'serif'],
+          quote: ['Dana', 'serif'],
       }
     },
   },
   plugins: [],
 }
-

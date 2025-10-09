@@ -8,9 +8,9 @@ const publicKey = import.meta.env.VITE_EMAIL_JS_KOHELET_PUBLIC_KEY;
 
 function KoheletBook() {
     const [showForm, setShowForm] = useState(false);
-    const [status, setStatus] = useState(null); // null | "success" | "error"
+    const [status, setStatus] = useState(null);
     const [error, setError] = useState("");
-    const [loading, setLoading] = useState(false); // NEW: loading spinner
+    const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         fullName: "",
         email: "",
@@ -34,7 +34,7 @@ function KoheletBook() {
         e.preventDefault();
         setStatus(null);
         setError("");
-        setLoading(true); // show spinner
+        setLoading(true);
 
         if (!isValidEmail(formData.email)) {
             setError("❌ כתובת אימייל לא תקינה");
@@ -77,7 +77,7 @@ function KoheletBook() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-full space-y-10">
+        <div className="flex flex-col items-center justify-center h-full space-y-10 px-4">
             {/* Title */}
             <motion.h2
                 className="text-3xl md:text-4xl font-bold text-center text-gray-100"
@@ -88,23 +88,43 @@ function KoheletBook() {
                 חדש! {bookName}
             </motion.h2>
 
-            {/* Tiles */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-6xl">
-                {/* Cover */}
+            {/* Main Content Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+                {/* Left: Video */}
                 <motion.div
-                    className="bg-[#222] rounded-2xl p-6 shadow-lg flex flex-col items-center"
+                    className="bg-[#222] rounded-2xl p-2 shadow-lg flex flex-col items-center justify-center"
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
                 >
-                    <img src={coverImage} alt="Kohelet Book Cover" className="rounded-lg shadow-md" />
+                    <div className="w-full h-full aspect-[9/16]">
+                        <iframe
+                            className="w-full h-full rounded-lg"
+                            src="https://www.youtube.com/embed/0Jb5JpfxeOs?rel=0"
+                            title="YouTube video"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
                 </motion.div>
 
-                {/* Description */}
+
+                {/* Middle: Cover */}
                 <motion.div
-                    className="bg-[#222] rounded-2xl p-6 shadow-lg flex items-center justify-center text-lg leading-relaxed text-gray-300"
+                    className="bg-[#222] rounded-2xl p-4 shadow-lg flex flex-col items-center justify-center"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8 }}
+                >
+                    <img src={coverImage} alt="Kohelet Book Cover" className="rounded-lg shadow-md w-70" />
+                </motion.div>
+
+                {/* Right: Description */}
+                <motion.div
+                    className="bg-[#222] rounded-2xl p-4 shadow-lg flex items-center justify-center text-base leading-relaxed text-gray-300"
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                 >
                     <p>
@@ -112,39 +132,26 @@ function KoheletBook() {
                         ״אוהב חכמה״ מציע פרשנות תורנית-הגותית מעמיקה על מגילת קהלת, תוך כדי התמודדות עם הקשיים הפילוסופיים והתיאולוגיים העולים ממנה. פרשנות זו פונה ישירות את הפסוקים הסתומים ואל השאלות הנצחיות העולות מדבריו של שלמה המלך, ומגלה כיצד האמונה הדתית השלמה מסתתרת מאחורי גל התהיות והספקות האינסופי.
                     </p>
                 </motion.div>
+            </div>
 
-                {/* Audio + Button */}
-                <div className="flex flex-col space-y-6">
-                    <motion.div
-                        className="bg-[#222] rounded-2xl p-6 shadow-lg flex flex-col items-center justify-center"
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <h3 className="text-xl mb-4">שיחה על הספר</h3>
-                        <audio controls className="w-64">
-                            <source src="/audio/kohelet.wav" type="audio/mpeg" />
-                            הדפדפן שלך לא תומך בנגן אודיו.
-                        </audio>
-                    </motion.div>
+            {/* Purchase Buttons */}
+            <div className="flex flex-col md:flex-row gap-4 mt-6">
+                <button
+                    onClick={() => window.open("https://textratz.co.il/shop/", "_blank")}
+                    className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-xl text-lg font-semibold shadow-md transition-transform transform hover:scale-105"
+                >
+                    לרכישה (הוצאה לאור)
+                </button>
 
-                    <motion.div
-                        className="bg-[#222] rounded-2xl p-6 shadow-lg flex items-center justify-center"
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <button
-                            onClick={() => {
-                                setShowForm(true);
-                                setStatus(null);
-                            }}
-                            className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-lg font-semibold shadow-md transition-transform transform hover:scale-105"
-                        >
-                            לרכישה (PayPal בלבד)
-                        </button>
-                    </motion.div>
-                </div>
+                <button
+                    onClick={() => {
+                        setShowForm(true);
+                        setStatus(null);
+                    }}
+                    className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-lg font-semibold shadow-md transition-transform transform hover:scale-105"
+                >
+                    לרכישה (PayPal בלבד)
+                </button>
             </div>
 
             {/* Modal */}
