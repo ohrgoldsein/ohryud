@@ -61,3 +61,17 @@ html {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;    /* Firefox */
 }
+
+:root {
+    --gold: #d4af37;
+}
+
+.text-gold {
+    color: var(--gold);
+}
+.border-gold {
+    border-color: var(--gold);
+}
+.bg-gold {
+    background-color: var(--gold);
+}
