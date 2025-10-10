@@ -91,7 +91,7 @@ export default function KoheletPage() {
                 <div className="flex-[1] bg-[#1E5F74] flex justify-center items-center p-4 md:p-8">
                     <iframe
                         className="rounded-2xl shadow-lg w-[90%] max-w-[360px] aspect-[9/16]"
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        src="https://www.youtube.com/embed/bqN_yr0M9Xw"
                         title="Kohelet Video"
                         allowFullScreen
                     ></iframe>

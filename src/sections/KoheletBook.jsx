@@ -100,7 +100,7 @@ function KoheletBook() {
                     <div className="w-full h-full aspect-[9/16]">
                         <iframe
                             className="w-full h-full rounded-lg"
-                            src="https://www.youtube.com/embed/0Jb5JpfxeOs?rel=0"
+                            src="https://www.youtube.com/embed/bqN_yr0M9Xw?rel=0"
                             title="YouTube video"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
