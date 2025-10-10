@@ -8,7 +8,7 @@ export default function KoheletPage() {
     return (
         <div dir="rtl" className="font-[Tinos] text-[#1D2D50]">
             {/* Sticky Header */}
-            <header className="fixed top-0 left-0 right-0 z-50 bg-[#E1C582]/90 backdrop-blur-sm shadow-md flex justify-between items-center px-4 md:px-12 py-3">
+            <header className="fixed top-0 left-0 right-0 z-50 bg-[#E1C582]/90 backdrop-blur-sm shadow-md flex justify-between items-center px-4 md:px-12 py-8">
                 <button
                     onClick={() => window.open("http://textratz.co.il/", "_blank")}
                     className="bg-[#b8860b] text-black font-semibold px-4 py-2 rounded-full hover:bg-[#d4a017] transition-colors text-sm md:text-base"
