@@ -129,7 +129,7 @@ export default function KoheletPage() {
                         היחס שבין השכל, האמונה והמציאות.
                     </p>
                     <div className="flex gap-6 text-[#b8860b] mt-4">
-                        <a href="https://ohryud.vercel.app/" target="_blank" rel="noopener noreferrer"><Globe className="w-6 h-6 md:w-8 md:h-8 hover:scale-110 transition-transform" /></a>
+                        <a href="https://www.ohryud.com/" target="_blank" rel="noopener noreferrer"><Globe className="w-6 h-6 md:w-8 md:h-8 hover:scale-110 transition-transform" /></a>
                         <a href="https://www.youtube.com/@t.navoch" target="_blank" rel="noopener noreferrer"><Youtube className="w-6 h-6 md:w-8 md:h-8 hover:scale-110 transition-transform" /></a>
                         <a href="mailto:ohr.yud@gmail.com"><Mail className="w-6 h-6 md:w-8 md:h-8 hover:scale-110 transition-transform" /></a>
                     </div>
