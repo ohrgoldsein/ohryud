@@ -10,7 +10,7 @@ export default function KoheletPage() {
             {/* Sticky Header */}
             <header className="fixed top-0 left-0 right-0 z-50 bg-[#E1C582]/90 backdrop-blur-sm shadow-md flex justify-between items-center px-4 md:px-12 py-8">
                 <button
-                    onClick={() => window.open("http://textratz.co.il/", "_blank")}
+                    onClick={() => window.open("https://textratz.co.il/product/oev-chochma/", "_blank")}
                     className="bg-[#b8860b] text-black font-semibold px-4 py-2 rounded-full hover:bg-[#d4a017] transition-colors text-sm md:text-base"
                 >
                     רכישה
@@ -61,7 +61,7 @@ export default function KoheletPage() {
                                 <div className="text-3xl font-bold">₪45</div>
                             </div>
                             <button
-                                onClick={() => window.open("http://textratz.co.il/", "_blank")}
+                                onClick={() => window.open("https://textratz.co.il/product/oev-chochma/", "_blank")}
                                 className="bg-[#1D2D50] hover:bg-[#133B5C] text-[#f7e7b4] px-8 py-3 md:px-10 md:py-4 rounded-full shadow-2xl text-xl md:text-2xl transition-transform transform hover:scale-105">
                                 לרכישה
                             </button>

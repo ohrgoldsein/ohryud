@@ -137,7 +137,7 @@ function KoheletBook() {
             {/* Purchase Buttons */}
             <div className="flex flex-col md:flex-row gap-4 mt-6">
                 <button
-                    onClick={() => window.open("https://textratz.co.il/shop/", "_blank")}
+                    onClick={() => window.open("https://textratz.co.il/product/oev-chochma/", "_blank")}
                     className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-xl text-lg font-semibold shadow-md transition-transform transform hover:scale-105"
                 >
                     לרכישה (הוצאה לאור)
