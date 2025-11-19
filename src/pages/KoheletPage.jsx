@@ -63,7 +63,12 @@ export default function KoheletPage() {
                             <button
                                 onClick={() => window.open("https://textratz.co.il/product/oev-chochma/", "_blank")}
                                 className="bg-[#1D2D50] hover:bg-[#133B5C] text-[#f7e7b4] px-8 py-3 md:px-10 md:py-4 rounded-full shadow-2xl text-xl md:text-2xl transition-transform transform hover:scale-105">
-                                לרכישה
+                                לרכישה (טקסט רץ)
+                            </button>
+                            <button
+                                onClick={() => window.open("https://www.e-vrit.co.il/Product/37745/%D7%90%D7%95%D7%94%D7%91_%D7%97%D7%95%D7%9B%D7%9E%D7%94", "_blank")}
+                                className="bg-[#1E5F74] hover:bg-[#284574] text-[#f7e7b4] px-8 py-3 md:px-10 md:py-4 rounded-full shadow-2xl text-xl md:text-2xl transition-transform transform hover:scale-105">
+                                 לרכישה (אתר עברית)
                             </button>
                         </div>
                     </div>

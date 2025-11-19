@@ -142,7 +142,12 @@ function KoheletBook() {
                 >
                     לרכישה (הוצאה לאור)
                 </button>
-
+                <button
+                    onClick={() => window.open("https://www.e-vrit.co.il/Product/37745/%D7%90%D7%95%D7%94%D7%91_%D7%97%D7%95%D7%9B%D7%9E%D7%94", "_blank")}
+                    className="px-8 py-4 bg-cyan-600 hover:bg-cyan-700 text-white rounded-xl text-lg font-semibold shadow-md transition-transform transform hover:scale-105"
+                >
+                    לרכישה (עברית)
+                </button>
                 <button
                     onClick={() => {
                         setShowForm(true);
