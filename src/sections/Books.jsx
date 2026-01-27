@@ -25,14 +25,14 @@ function Books() {
       buttonDisabled: false,
       scrollTo: "kohelet_book"
     },
-    {
-      image: "/covers/book1.png",
-      title: "זעקת אמת",
-              description:"הרבי מקוצק, 'הילד הרע' של החסידות, מוצג לראשונה באור בין-תחומי. הספר עוקב אחרי שמונה פרסונות שונות של הקוצקאי נוכח האגדות עליו, ומראה כי דמותו המיתולוגית מכילה צדיק למדן, אירוניקן משתובב, פילוסוף ספקן וגורו שתקן.",
-      buttonText: "בקרוב מאוד!",
-      buttonDisabled: true,
-      link: "https://www.magnespress.co.il/",
-    },
+    //  {
+   //   image: "/covers/book1.png",
+  //    title: "זעקת אמת",
+  //            description:"הרבי מקוצק, 'הילד הרע' של החסידות, מוצג לראשונה באור בין-תחומי. הספר עוקב אחרי שמונה פרסונות שונות של הקוצקאי נוכח האגדות עליו, ומראה כי דמותו המיתולוגית מכילה צדיק למדן, אירוניקן משתובב, פילוסוף ספקן וגורו שתקן.",
+  //    buttonText: "בקרוב מאוד!",
+ //     buttonDisabled: true,
+ //     link: "https://www.magnespress.co.il/",
+  //  },
     {
       image: "/covers/book3.JPG",
       title: "עופר האילים",
